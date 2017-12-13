@@ -1,0 +1,39 @@
+body{
+background-color: #cbcbcb;
+font-family: Georgia;
+		font-size: 18px;
+		color: #808080;
+
+}
+
+.jumbotron{
+	text-align: center;
+	margin-top: 0px;
+}
+
+#finalMsg{
+	background-color: pink;
+	color: red;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+/* Hanagman CSS*/
+
+input {
+	border: 2px solid #999;
+	font-family: Georgia, sans-serif;
+	color: #999;
+}
+
+#ratefeld {
+	font-family: Georgia, 'cursive';
+	font-size: 2.0em;
+}
+
+#footer{
+	text-align: center;
+	font-size: 12px;
+	color: #fff;
+	margin-top: 15px;
+}
