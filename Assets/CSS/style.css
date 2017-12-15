@@ -17,6 +17,11 @@ font-family: Georgia;
 	font-weight: bold;
 	font-size: 12px;
 }
+/* PsychicGame */
+
+.Win{color: red;}
+.Los{color: green;}
+
 
 /* Hanagman CSS*/
 

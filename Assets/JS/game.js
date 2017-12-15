@@ -2,30 +2,40 @@
 /* Hangman Logic */
 
 var WordList = [
-["T", "R", "E", "E", "H", "O", "U", "S", "E"],
+  ["C", "O", "M", "P", "U", "T", "E", "R"],
   ["J","A","V","A","S","C","R","I","P","T"],
   ["W","E","B","D","E","S","I","G","N"],
   ["E","D","U","C","A","T","I","O","N"],
   ["C","H","O","C","O","L","A","T","E"],
-  ["G","E","R","M","A","N","Y"]
+  ["I","N","D","I","A","N"],
+  ["D","R","E","A","M"]
 ]
+
+// random word is picked from above list
 var random = Math.floor((Math.random()*(WordList.length-1))); 
 
-var ranWord = WordList[random]; // the word to guess will be chosen from the array above
+// the word to guess is picked and stored in ranWord 
+var ranWord = WordList[random]; 
 var ranWordLen = new Array(ranWord.length);
+
+// count is intialised for guess
 var cnt = 0;
 
 // every letter in the word is symbolized by an underscore in the guessfield
-for (var i = 0; i < ranWordLen.length; i++){
+for (var i = 0; i < ranWordLen.length; i++)
+{
 	ranWordLen[i] = "_ ";
 }
 
 // prints the guessfield
-function printWord(){
-	for (var i = 0; i < ranWordLen.length; i++){
-	var dipMatchedLetter = document.getElementById("dipMatchedLetter");
-	var wordTable = document.createTextNode(ranWordLen[i]);
-	dipMatchedLetter.appendChild(wordTable);
+function printWord()
+{
+	for (var i = 0; i < ranWordLen.length; i++)
+	{
+		// div to display user's entered correct letters of the picked word
+		var dipMatchedLetter = document.getElementById("dipMatchedLetter");
+		var wordTable = document.createTextNode(ranWordLen[i]);
+		dipMatchedLetter.appendChild(wordTable);
 	}
 }
 
@@ -68,12 +78,21 @@ var matchLetters = function(){
 	if(win){
 		var finalMsg = document.getElementById("finalMsg");
 		dipMatchedLetter.innerHTML=" You win !"; 
+
+		// if user wins guess button is disabled ,so that user has to click new game button to start again
+		var btnGuess = document.getElementById("btnGuess");
+		btnGuess.disabled=true;
+
 	}
 	
 	//once you got six wrong letters, you lose
 	if(cnt === 6){
 		var finalMsg = document.getElementById("finalMsg");
 		dipMatchedLetter.innerHTML="Uh...I guess you're dead now."; 
+
+		// if user looses then also guess button is disabled ,so that user has to click new game button to start again
+		var btnGuess = document.getElementById("btnGuess");
+		btnGuess.disabled=true;
 	}
 }
 
